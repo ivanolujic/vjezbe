@@ -24,7 +24,8 @@ create table dijete(
     sifra int not null primary key auto_increment,
     osoba int not null,
     boravak boolean not null,
-    cijena decimal(18,2)
+    cijena decimal(18,2),
+    skupina int not null
 );
 
 create table skupina(
@@ -33,3 +34,9 @@ create table skupina(
     odgojiteljica int not null,
     maximumdjece int not null
 );
+
+alter table skupina add foreign key (odgojiteljica) references odgojiteljica(sifra);
+alter table dijete add foreign key (skupina) references skupina(sifra);
+
+alter table odgojiteljica add foreign key (osoba) references osoba(sifra);
+alter table dijete add foreign key (osoba) references osoba(sifra);
