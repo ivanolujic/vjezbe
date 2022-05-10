@@ -39,3 +39,8 @@ create table sponzor(
     izlozba int not null,
     iznos decimal(18,2)
 );
+
+alter table izlozba add foreign key (kustos) references kustos(sifra);
+alter table izlozba add foreign key (sponzor) references sponzor(sifra);
+
+alter table djelo add foreign key (izlozba) references izlozba(sifra);
