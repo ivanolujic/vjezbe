@@ -22,28 +22,16 @@ create table zaduzenje(
 
 create table svecenik(
     sifra int not null primary key auto_increment,
-    osoba int not null,
-    nadredjenisvecenik int not null
-);
-
-create table osoba(
-    sifra int not null primary key auto_increment,
     ime varchar(50) not null,
     prezime varchar(50) not null,
     datumrodjenja datetime,
     oib char(11) not null,
-    email varchar(100)
+    email varchar(100),
+    nadredjenisvecenik int not null
 );
 
-create table nadredjenisvecenik(
-    sifra int not null primary key auto_increment,
-    osoba int not null
-);
 
 alter table zaduzenje add foreign key (poslovi) references poslovi(sifra);
 alter table zaduzenje add foreign key (svecenik) references svecenik(sifra);
 
-alter table nadredjenisvecenik add foreign key (osoba) references osoba(sifra);
-alter table svecenik add foreign key (osoba) references osoba(sifra);
-
-alter table svecenik add foreign key (nadredjenisvecenik) references nadredjenisvecenik(sifra);
+alter table svecenik add foreign key (nadredjenisvecenik) references svecenik(sifra); # alter table za postavljanje veze unutar iste tablice
