@@ -1,39 +1,61 @@
 # Doktor liječi pacijente. Jednog pacijenta može liječiti više puta. U liječenju pacijenta doktoru pomažu medicinske sestre
 
-# C:\xampp\mysql\bin\mysql -uroot < C:\Users\Korisnik\Documents\GitHub\vjezbe\ordinacija.sql
+# C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Korisnik\Documents\GitHub\vjezbe\ordinacija.sql
 
 drop database if exists ordinacija;
 create database ordinacija;
 use ordinacija;
 
-create table djelatnik(
-    osoba varchar(50),
-    datumrodjenja varchar(50),
-    iban varchar(50),
-    sifradok varchar(50),
-    radnomjesto varchar(50)
+create table doktor(
+    sifra int not null primary key auto_increment,
+    ime varchar(50) not null,
+    prezime varchar(50) not null,
+    oib char(11) not null,
+    spol varchar(50) not null,
+    email varchar(100),
+    adresa varchar(50),
+    datumrodjenja datetime,
+    iban varchar(50) not null,
+    sifradok char(9) not null
 );
 
-create table osoba(
-    ime varchar(50),
-    prezime varchar(50),
-    oib varchar(50),
-    spol varchar(50),
-    email varchar(50),
-    adresa varchar(50)
+create table medsestra(
+    sifra int not null primary key auto_increment,
+    ime varchar(50) not null,
+    prezime varchar(50) not null,
+    oib char(11) not null,
+    spol char(1) not null,
+    email varchar(100),
+    adresa varchar(50),
+    datumrodjenja datetime,
+    iban varchar(50) not null
 );
 
 create table korisnik(
-    osoba varchar(50),
-    mbo varchar(50),
-    nacinplacanja varchar(50)
+    sifra int not null primary key auto_increment,
+    ime varchar(50) not null,
+    prezime varchar(50) not null,
+    oib char(11) not null,
+    spol varchar(50) not null,
+    email varchar(100),
+    adresa varchar(50),
+    datumrodjenja datetime,
+    mbo char(13) not null
+    
 );
 
 create table posjet(
-    datum varchar(50),
-    dijagnoza varchar(50),
-    djelatnik varchar(50),
-    korisnik varchar(50),
-    cijena varchar(50),
+    sifra int not null primary key auto_increment,
+    datum date not null,
+    dijagnoza varchar(100),
+    doktor int not null,
+    medsestra int not null,
+    korisnik int not null,
+    cijena decimal(18,2) not null,
+    nacinplacanja varchar(50),
     lijek varchar(50)
 );
+
+alter table posjet add foreign key (doktor) references doktor(sifra);
+alter table posjet add foreign key (medsestra) references medsestra(sifra);
+alter table posjet add foreign key (korisnik) references korisnik(sifra);
