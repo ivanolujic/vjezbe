@@ -13,7 +13,7 @@ create table vozilo(
     model varchar(50) not null,
     registracija varchar(50) not null,
     godiste datetime,
-    vozac varchar(50) not null
+    vozac int not null
 );
 
 create table vozac(
@@ -41,3 +41,10 @@ create table voznja(
     vozac int,
     putnik int
 );
+
+alter table vozilo add foreign key (vozac) references vozac(sifra);
+alter table vozac add foreign key (vozilo) references vozilo(sifra);
+
+alter table voznja add foreign key (vozilo) references vozilo(sifra);
+alter table voznja add foreign key (vozac) references vozac(sifra);
+alter table voznja add foreign key (putnik) references putnik(sifra);
