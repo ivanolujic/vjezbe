@@ -48,3 +48,28 @@ alter table vozac add foreign key (vozilo) references vozilo(sifra);
 alter table voznja add foreign key (vozilo) references vozilo(sifra);
 alter table voznja add foreign key (vozac) references vozac(sifra);
 alter table voznja add foreign key (putnik) references putnik(sifra);
+
+insert into vozac (ime, prezime, oib, datumrodjenja, iban, vozilo)
+values ('Luka', 'Vidović', '12345678998', '1995-03-21', 
+'HR3200284574158782', 'Toyota');
+
+insert into vozac (ime, prezime, oib, datumrodjenja, iban, vozilo)
+values ('Matej', 'Bilić', '12345648998', '1980-05-03', 
+'HR3200284574158782', 'Opel');
+
+insert into vozac (ime, prezime, oib, datumrodjenja, iban, vozilo)
+values ('Marin', 'Hrgović', '12345671568', '1977-09-03', 
+'HR3200284574158782', 'Škoda');
+
+insert into vozilo (marka, model, tip, registracija, vozac)
+values ('Opel', 'Corsa', '1.2', 'OS-123-DB', 1);
+
+insert into vozilo (marka, model, tip, registracija,vozac)
+values ('Toyota', 'Corola', '2.0', 'OS-453-JH', 2);
+
+insert into vozilo (marka, model, tip, registracija, vozilo)
+values ('Škoda', 'Octavia', '1.4', 'ZG 8597-HJ', 3);
+
+
+
+
