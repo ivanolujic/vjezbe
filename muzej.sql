@@ -19,8 +19,7 @@ create table djelo(
     sifra int not null primary key auto_increment,
     nazivdjela varchar(100) not null,
     autor varchar(50) not null,
-    izlozba int not null,
-    kustos int not null
+    izlozba int not null
 );
 
 create table kustos(
@@ -44,3 +43,22 @@ alter table izlozba add foreign key (kustos) references kustos(sifra);
 alter table izlozba add foreign key (sponzor) references sponzor(sifra);
 
 alter table djelo add foreign key (izlozba) references izlozba(sifra);
+
+insert into djelo (nazivdjela, autor, izlozba)
+values ('Mona LIsa', 'Leonardo da Vinci','Leonardo');
+
+insert into djelo (nazivdjela, autor, izlozba)
+values ('Stvaranje Adama', 'Michelangello Buonarti', 'Talijanski majstori');
+
+insert into djelo (nazivdjela, autor, izlozba)
+valuse
+('Posljednja vecera', 1, 1),
+('Zvjezdana noć', 'Vincent van Gogh', 'Nizozemski majstori'),
+('Vrisak', 'Eduard Munk', 'Moderna'),
+('Istrajnost memorije', 'Salvador Dali', 'Realizam'),
+('Djevoka sa bisernom naušnicom', 'Johanes Vermer', 3),
+('Noćna straža', 'Rebrant van Rein', 3),
+('Autoportret baz brade', 4, 3),
+('Guernica', 'Pablo Pikaso', 'Kubizam');
+
+
