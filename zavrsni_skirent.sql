@@ -7,6 +7,7 @@ use zavrsni_skirent;
 
 create table oprema(
     sifra int not null primary key auto_increment,
+    poveznica int not null,
     vrsta varchar(50) not null,
     marka varchar(50),
     velicina varchar(50) not null,
@@ -34,6 +35,7 @@ create table kupac(
 
 create table usluga(
     sifra int not null primary key auto_increment,
+    poveznica int,
     oprema int,
     kupac int,
     serviser int,
@@ -42,6 +44,12 @@ create table usluga(
     cijena decimal(16,2)
 );
 
+create table poveznica(
+    usluga int not null,
+    kupac int not null
+);
+
 alter table usluga add foreign key (kupac) references kupac(sifra);
 alter table usluga add foreign key (serviser) references serviser(sifra);
-alter table usluga add foreign key (oprema) references oprema(sifra);
+alter table usluga add foreign key (poveznica) references poveznica(sifra);
+alter table oprema add foreign key (poveznica) references poveznica(sifra);
