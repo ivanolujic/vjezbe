@@ -45,6 +45,7 @@ create table usluga(
 );
 
 create table poveznica(
+    sifra int not null primary key auto_increment,
     usluga int not null,
     kupac int not null
 );
