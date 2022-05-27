@@ -2,6 +2,7 @@
 # Postolar ima šegrta koji sudjeluje u određenim popravcima obuće
 
 # C:\xampp\mysql\bin\mysql -uroot < C:\Users\Korisnik\Documents\GitHub\vjezbe\postolar.sql
+# C:\xampp\mysql\bin\mysql -uroot < C:\Users\Ivan\Documents\GitHub\vjezbe\postolar.sql
 
 drop database if exists postolar;
 create database postolar;
@@ -15,22 +16,22 @@ create table obuca(
 );
 
 create table djelatnik(
-    osoba varchar(50),
+    ime varchar(50),
+    prezime varchar(50),
+    oib varchar(50),
+    email varchar(50),
+    adresa varchar(50),
     datumrodjenja varchar(50),
     iban varchar(50),
     statusdjelatnika varchar(50)
 );
 
-create table osoba(
+create table korisnik(
     ime varchar(50),
     prezime varchar(50),
     oib varchar(50),
     email varchar(50),
-    adresa varchar(50)
-);
-
-create table korisnik(
-    osoba varchar(50),
+    adresa varchar(50),
     nacinplacanja varchar(50)
 );
 
