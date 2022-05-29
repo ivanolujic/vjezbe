@@ -151,3 +151,41 @@ values (95.30, 58, 589, 1, 'plava', 'dugačka', 2);
 insert into cura (novcica, gustoca, lipa, ogrlica, bojakose, suknja, punac)
 values (55, 54, 100, 3, 'crna', 'kratka', 3);
 
+insert into mladic (suknja, kuna, drugiputa, asocijalno, ekstroventno, dukserica, muskarac)
+values ('crna', 485, '2022-03-05', null, true, 'siva', 1);
+
+insert into mladic (suknja, kuna, drugiputa, asocijalno, ekstroventno, dukserica, muskarac)
+values ('zelena', 584, '2022-09-03', null, true, 'žuta', 2);
+
+insert into mladic (suknja, kuna, drugiputa, asocijalno, ekstroventno, dukserica, muskarac)
+values ('plava', 256, '2022-02-21', null, true, 'crvena', 3);
+
+#u tablici cura postaviti svim zapisima kolonu gustoca na vrijednost 15.77
+update cura set gustoca=15.77;
+
+# u tablici mladic obrisati sve zapise čija je vrijednost kolone kuna veće od 15,78
+delete from mladic where kuna >15.78;  
+
+# izlistati kratkamajica iz tablice zena uz uvjet da vrijenost kolone hlace sadrze slova ana
+select kratkamajica from zena where hlace like '%ana%';
+
+# prikazati dukserica iz tablice svekar, asocijalno iz tablice mladic
+# te hlace iz tablice muskarac uz uvjet da su vrijednosti kolone hlace
+# iz tablice zena počinju slovom a te da su vrijednosti kolone haljina iz
+# tablice sestra sadrže znakove ba. Podatke posložite po hlace iz tablice muskarac silazno
+select a.dukserica, b.asocijalno, c.hlace,
+d.hlace, e.haljina
+from svekar a inner join sestra_svekar ss 
+on a.sifra=ss.svekar
+inner join sestra e on ss.sestra = e.sifra 
+inner join zena d on e.sifra=d.sestra 
+inner join muskarac c on d.sifra=c.zena 
+inner join mladic b on c.sifra = b.muskarac 
+where d.hlace like 'a%' and e.haljina like '%ba%'
+order by c.hlace DESC;
+
+# prikazati kolone haljina i maraka iz tablice sestra čiji se primarni
+# ključ ne nalaze u tablici sestra_svekar
+select a.haljina, a.maraka
+from sestra a inner join sestra_svekar ss 
+on a.sifra=ss.sestra where a.sifra not in (select sestra from sestra_svekar);
