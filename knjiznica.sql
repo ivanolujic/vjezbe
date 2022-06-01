@@ -1,4 +1,4 @@
-﻿# Klijent pokrenuti s --default-character-set=utf8 C:\Users\Korisnik\Documents\GitHub\bazeZaVjezbanje\knjiznica.sql
+﻿# Klijent pokrenuti s --default-character-set=utf8 C:\Users\Korisnik\Documents\GitHub\vjezbe\knjiznica.sql
 drop database if exists knjiznica;
 create database knjiznica DEFAULT CHARACTER SET utf8  DEFAULT COLLATE utf8_general_ci;
 use knjiznica;
