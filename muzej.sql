@@ -1,5 +1,6 @@
 # U muzeju postoji više izložaba. Jedna izložba ima više djela. Svaki kustos je zadužen za jednu izložbu. Svaka izložba ima jednog sponzora.
 # C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Korisnik\Documents\GitHub\vjezbe\muzej.sql
+# C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Ivan\Documents\GitHub\vjezbe\muzej.sql
 
 drop database if exists muzej;
 create database muzej;
@@ -45,7 +46,7 @@ alter table izlozba add foreign key (sponzor) references sponzor(sifra);
 alter table djelo add foreign key (izlozba) references izlozba(sifra);
 
 insert into djelo (nazivdjela, autor, izlozba)
-values ('Mona LIsa', 'Leonardo da Vinci','Leonardo');
+values ('Mona LIsa', 'Leonardo da Vinci',1);
 
 insert into djelo (nazivdjela, autor, izlozba)
 values ('Stvaranje Adama', 'Michelangello Buonarti', 'Talijanski majstori');
