@@ -1,5 +1,6 @@
 # djecji vrtic
 # C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Korisnik\Documents\GitHub\vjezbe\djecjivrtic.sql
+# C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Ivan\Documents\GitHub\vjezbe\djecjivrtic.sql
 
 drop database if exists djecjivrtic;
 create database djecjivrtic;

@@ -2,6 +2,7 @@
 
 # Path
 # C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Korisnik\Documents\GitHub\vjezbe\zavrsni_rad.sql
+# C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Ivan\Documents\GitHub\vjezbe\zavrsni_rad.sql
 
 drop database if exists zavrsni_rad;
 create database zavrsni_rad;

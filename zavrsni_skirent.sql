@@ -1,5 +1,6 @@
 # Najam skijaške opreme
 # C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Korisnik\Documents\GitHub\vjezbe\zavrsni_skirent.sql
+# C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Ivan\Documents\GitHub\vjezbe\zavrsni_skirent.sql 
 
 drop database if exists zavrsni_skirent;
 create database zavrsni_skirent;

@@ -2,7 +2,7 @@
 # Postolar ima šegrta koji sudjeluje u određenim popravcima obuće
 
 # C:\xampp\mysql\bin\mysql -uroot < C:\Users\Korisnik\Documents\GitHub\vjezbe\postolar.sql
-# C:\xampp\mysql\bin\mysql -uroot < C:\Users\Ivan\Documents\GitHub\vjezbe\postolar.sql
+# # C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Ivan\Documents\GitHub\vjezbe\postolar.sql
 
 drop database if exists postolar;
 create database postolar;

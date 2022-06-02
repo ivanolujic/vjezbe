@@ -27,7 +27,7 @@ create table zena(
     treciputa datetime,
     hlace varchar(46),
     kratkamajica varchar(31) not null,
-    jmbg char(11) not null,
+    jmbag char(11) not null,
     bojaociju varchar(39) not null,
     haljina varchar(44),
     sestra int not null
@@ -75,7 +75,7 @@ create table mladic(
     kuna decimal(16,8) not null,
     drugiputa datetime,
     asocijalno bit,
-    ekstrovertno bit not null,
+    ekstroventno bit not null,
     dukserica varchar(48) not null,
     muskarac int
 );

@@ -2,6 +2,7 @@
 # Urar ima šegrta koji sudjeluje u određenim popravcima satova
 
 # C:\xampp\mysql\bin\mysql -uroot < C:\Users\Korisnik\Documents\GitHub\vjezbe\urar.sql
+# C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Ivan\Documents\GitHub\vjezbe\urar.sql
 
 drop database if exists urar;
 create database urar;

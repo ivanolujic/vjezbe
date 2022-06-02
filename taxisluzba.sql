@@ -1,6 +1,7 @@
 # Taksi tvrtka ima više vozila. Jedno vozilo vozi jedan vozač. U jednoj vožnji vozač može prevesti više putnika. 
 # Jedan putnik se naravno može tijekom vremena imati više vožnji.
 # C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Korisnik\Documents\GitHub\vjezbe\taxisluzba.sql
+# C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Ivan\Documents\GitHub\vjezbe\taxisluzba.sql
 
 drop database if exists taxisluzba;
 create database taxisluzba;

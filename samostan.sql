@@ -1,6 +1,7 @@
 # U samostanu se nalaze svećenici. Svaki svećenik je zadužen za više poslova. Jedan posao u isto vrijeme može obavljati više svećenika. 
 # Svaki svećenik ima samo jednog nadređenog svećenika
 # C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Korisnik\Documents\GitHub\vjezbe\samostan.sql
+# C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 <C:\Users\Ivan\Documents\GitHub\vjezbe\samostan.sql 
 
 drop database if exists samostan;
 create database samostan;

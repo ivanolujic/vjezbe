@@ -1,5 +1,6 @@
 # tablice za udrugu za zastitu zivotinja
 # C:\xampp\mysql\bin\mysql -uroot < C:\Users\Korisnik\Documents\GitHub\vjezbe\udrugazazastitu.sql
+# C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Ivan\Documents\GitHub\vjezbe\udrugazazastitu.sql
 
 drop database if exists udrugazazastitu;
 create database udrugazazastitu;
